@@ -15,8 +15,8 @@ services:
     environment:
       DB_HOST: mysql
       DB_PORT: 3306
-      DB_USER: nest
-      DB_PASS: password
+      DB_USER: root
+      DB_PASS: 871804
       DB_NAME: auth_example
     command: npm run start:prod
 
@@ -25,8 +25,8 @@ services:
     container_name: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: nest123
-      MYSQL_DATABASE: nest
+      MYSQL_ROOT_PASSWORD: 871804
+      MYSQL_DATABASE: auth_example
     ports:
       - "3306:3306"
     volumes:
