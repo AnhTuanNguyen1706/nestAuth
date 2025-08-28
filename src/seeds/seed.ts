@@ -1,6 +1,6 @@
 import { Role } from '../roles/entity/roles.entity';
 import { Permission } from '../permissions/entity/permissions.entity';
-import dataSource from '../../data-source';
+import dataSource from '../data-source';
 import { User } from '../user/entity/user.entity';
 
 async function seed() {

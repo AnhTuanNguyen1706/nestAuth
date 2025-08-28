@@ -1,8 +1,8 @@
 import { DataSource } from 'typeorm';
 import * as dotenv from 'dotenv';
-import { User } from './src/user/entity/user.entity';
-import { Role } from './src/roles/entity/roles.entity';
-import { Permission } from './src/permissions/entity/permissions.entity';
+import { User } from './user/entity/user.entity';
+import { Role } from './roles/entity/roles.entity';
+import { Permission } from './permissions/entity/permissions.entity';
 
 dotenv.config();
 
