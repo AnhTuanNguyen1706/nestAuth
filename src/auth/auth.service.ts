@@ -51,6 +51,7 @@ export class AuthService {
       const { password, ...result } = user;
       return result;
     }
+    console.log('asd');
     throw new UnauthorizedException('Invalid credentials');
   }
   async register(createUserDto: CreateUserDto) {
