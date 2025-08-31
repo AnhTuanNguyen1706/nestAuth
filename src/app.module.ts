@@ -36,6 +36,8 @@ import { PermissionsModule } from './permissions/permissions.module';
           },
           allowPublicKeyRetrieval: true,
         },
+        retryAttempts: 10,
+        retryDelay: 3000,
       }),
     }),
 
