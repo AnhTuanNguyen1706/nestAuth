@@ -1,5 +1,4 @@
 import { Role } from '../roles/entity/roles.entity';
-import { Permission } from '../permissions/entity/permissions.entity';
 import dataSource from '../data-source';
 import { User } from '../user/entity/user.entity';
 
@@ -8,7 +7,6 @@ async function seed() {
 
   const roleRepo = dataSource.getRepository(Role);
   const userRepo = dataSource.getRepository(User);
-  const adminRole = await roleRepo.findOne({ where: { name: 'admin' } });
   const userRole = await roleRepo.findOne({ where: { name: 'user' } });
   const user = await userRepo.findOne({
     where: { username: 'tuandeptrai1706' },

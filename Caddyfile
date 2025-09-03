@@ -1,0 +1,7 @@
+goldendarkness.top {
+    reverse_proxy app-prod:3000
+}
+
+dev.goldendarkness.top {
+    reverse_proxy app-dev:3000
+}

@@ -7,12 +7,13 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { RolesModule } from './roles/roles.module';
 import { PermissionsModule } from './permissions/permissions.module';
-
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: `.env.${process.env.NODE_ENV || 'dev'}`,
+      envFilePath:
+        process.env.DOTENV_CONFIG_PATH ||
+        `.env.${process.env.NODE_ENV || 'dev'}`,
     }),
     AuthModule,
     UserModule,
@@ -40,7 +41,6 @@ import { PermissionsModule } from './permissions/permissions.module';
         retryDelay: 3000,
       }),
     }),
-
     RolesModule,
     PermissionsModule,
   ],
