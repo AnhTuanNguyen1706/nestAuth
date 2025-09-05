@@ -32,6 +32,7 @@ import { PermissionsModule } from './permissions/permissions.module';
         database: config.get('DB_NAME'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
+        logging: true,
         extra: {
           authPlugins: {
             mysql_clear_password: () => () => config.get('DB_PASSWORD'),
