@@ -18,8 +18,13 @@ jobs:
 
       - name: Check secrets
         run: |
-          echo "Username: $DOCKER_USERNAME"
-          echo "Password length: ${#DOCKER_PASSWORD}"
+          echo "Username from secret: $DOCKER_USERNAME"
+          if [ -z "$DOCKER_PASSWORD" ]; then
+            echo "❌ Password is empty"
+            exit 1
+          else
+            echo "✅ Password length: ${#DOCKER_PASSWORD}"
+          fi
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
